@@ -1,0 +1,112 @@
+/* Body Background */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1a73e8, #34a853);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Navbar Styling */
+.navbar {
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+.navbar-nav .btn-danger {
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+/* Main Content */
+.container {
+    max-width: 900px;
+    margin-top: 80px;
+}
+
+/* Center the title */
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.card-text {
+    color: #555;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, #1a73e8, #34a853);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #34a853, #1a73e8);
+    transform: translateY(-3px);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+}
+
+/* Back Link Styling */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #34a853;
+    text-decoration: underline;
+}
+.table-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.table thead th {
+    background-color: #007bff;
+    color: #ffffff;
+}
+.table tbody tr:hover {
+    background-color: #f1f3f5;
+}
+.no-violations {
+    text-align: center;
+    color: #6c757d;
+}
