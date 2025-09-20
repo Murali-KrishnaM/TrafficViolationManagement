@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Violation - Traffic Violation System</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="Frontend/css/styles.css">
+</head>
+
+<body>
+
+  <!-- Fixed Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Traffic Violation Management</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="officer_dashboard.html">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-danger text-white" href="Backend/logout.php">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Scrollable Form Below Navbar -->
+  <div class="container my-5">
+    <h1 class="text-center">Add Violation</h1>
+
+    <!-- Success/Error Message Container -->
+    <div id="message" class="alert"></div>
+
+    <div class="form-container">
+      <form action="Backend/add_violation.php" method="POST" id="violationForm">
+        <div class="form-group">
+          <label for="vehicle_id">Vehicle ID:</label>
+          <input type="text" class="form-control" id="vehicle_id" name="vehicle_id" required>
+        </div>
+        <div class="form-group">
+          <label for="owner_name">Owner Name:</label>
+          <input type="text" class="form-control" id="owner_name" name="owner_name" required>
+        </div>
+        <div class="form-group">
+          <label for="vehicle_model">Vehicle Model:</label>
+          <input type="text" class="form-control" id="vehicle_model" name="vehicle_model" required>
+        </div>
+        <div class="form-group">
+          <label for="violation_type">Violation Type:</label>
+          <input type="text" class="form-control" id="violation_type" name="violation_type" required>
+        </div>
+        <div class="form-group">
+          <label for="violation_date">Violation Date:</label>
+          <input type="date" class="form-control" id="violation_date" name="violation_date" required>
+        </div>
+        <div class="form-group">
+          <label for="fine_amount">Fine Amount:</label>
+          <input type="number" class="form-control" id="fine_amount" name="fine_amount" required>
+        </div>
+        <div class="form-group">
+          <label for="payment_status">Payment Status:</label>
+          <select class="form-control" id="payment_status" name="payment_status" required>
+            <option value="Pending">Pending</option>
+            <option value="Paid">Paid</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3" id="submitButton">Add Violation</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript for Auto-Hide Messages & Form Enhancements -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const params = new URLSearchParams(window.location.search);
+      const messageDiv = document.getElementById("message");
+
+      if (params.get("success")) {
+        messageDiv.innerHTML = '<div class="alert alert-success">Violation added successfully!</div>';
+        messageDiv.style.display = "block";
+      } else if (params.get("error")) {
+        messageDiv.innerHTML = '<div class="alert alert-danger">Error adding violation. Please try again.</div>';
+        messageDiv.style.display = "block";
+      }
+
+      // Auto-hide message after 3 seconds
+      if (messageDiv.style.display === "block") {
+        setTimeout(() => {
+          messageDiv.style.display = "none";
+        }, 3000);
+      }
+
+      // Prevent form double submission
+      document.getElementById("violationForm").addEventListener("submit", function () {
+        document.getElementById("submitButton").disabled = true;
+      });
+    });
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
