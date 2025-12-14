@@ -99,15 +99,8 @@ Backend/db_connection.php
 
 ---
 
-## 🗄️ Database Schema
-
--- Create database
-CREATE DATABASE IF NOT EXISTS traffic_violation_system;
-USE traffic_violation_system;
-
--- ----------------------------
--- Users Table
--- ----------------------------
+🗄️ Database Schema
+Users Table
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(100) NOT NULL UNIQUE,
@@ -116,9 +109,7 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- ----------------------------
--- Violation Table
--- ----------------------------
+Violation Table
 CREATE TABLE Violation (
     id INT AUTO_INCREMENT PRIMARY KEY,
     vehicle_id VARCHAR(50) NOT NULL,
@@ -131,6 +122,8 @@ CREATE TABLE Violation (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+📌 Usage
+Open phpMyAdmin → Select database → Paste SQL → Execute
 
 ## 🚀 Running the Project
 
