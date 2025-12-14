@@ -99,6 +99,39 @@ Backend/db_connection.php
 
 ---
 
+## 🗄️ Database Schema
+
+-- Create database
+CREATE DATABASE IF NOT EXISTS traffic_violation_system;
+USE traffic_violation_system;
+
+-- ----------------------------
+-- Users Table
+-- ----------------------------
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    user_type ENUM('civilian', 'officer') NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- ----------------------------
+-- Violation Table
+-- ----------------------------
+CREATE TABLE Violation (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    vehicle_id VARCHAR(50) NOT NULL,
+    owner_name VARCHAR(100) NOT NULL,
+    vehicle_model VARCHAR(100) NOT NULL,
+    violation_type VARCHAR(100) NOT NULL,
+    violation_date DATE NOT NULL,
+    fine_amount DECIMAL(10,2) NOT NULL,
+    payment_status ENUM('Pending', 'Paid') DEFAULT 'Pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
 ## 🚀 Running the Project
 
 Access the application in your browser:
