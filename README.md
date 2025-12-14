@@ -35,33 +35,33 @@ This project was developed as part of an academic web development requirement an
 
 ## 📂 Project Structure
 
+```text
 project-root/
-│
 ├── Backend/
-│ ├── add_violation.php
-│ ├── db_connection.php
-│ ├── get_violations.php
-│ ├── logout.php
-│ ├── process_login.php
-│ ├── process_payment.php
-│ ├── process_signup.php
-│ └── view_violations.php
+│   ├── add_violation.php
+│   ├── db_connection.php
+│   ├── get_violations.php
+│   ├── logout.php
+│   ├── process_login.php
+│   ├── process_payment.php
+│   ├── process_signup.php
+│   └── view_violations.php
 │
 ├── Frontend/
-│ └── css/
-│ ├── dashboardDesign.css
-│ └── styles.css
+│   ├── css/
+│   │   ├── dashboardDesign.css
+│   │   └── styles.css
+│   ├── add_violation.html
+│   ├── civilian_dashboard.html
+│   ├── officer_dashboard.html
+│   ├── login.html
+│   ├── signup.html
+│   ├── pay_violation.html
+│   ├── view_violations.html
+│   └── view_violations_result.html
 │
-├── add_violation.html
-├── civilian_dashboard.html
-├── officer_dashboard.html
-├── login.html
-├── signup.html
-├── pay_violation.html
-├── view_violations.html
-├── view_violations_result.html
 └── process_login.php
-
+```
 
 ---
 
@@ -100,6 +100,7 @@ Backend/db_connection.php
 ---
 
 🗄️ Database Schema
+```text
 Users Table
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -121,7 +122,7 @@ CREATE TABLE Violation (
     payment_status ENUM('Pending', 'Paid') DEFAULT 'Pending',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
+```
 📌 Usage
 Open phpMyAdmin → Select database → Paste SQL → Execute
 
