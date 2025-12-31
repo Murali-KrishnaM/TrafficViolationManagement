@@ -176,3 +176,7 @@ This project is for educational purposes only.
 Developed by **Murali Krishna**  
 B.Tech – AI & Data Science  
 
+## License
+
+This project is intended for educational purposes and is open-sourced for anyone who needs to implement and learn.
+
